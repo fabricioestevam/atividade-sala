@@ -1,0 +1,354 @@
+# Função para verificar se a letra é vogal ou consoante
+def verificar_letra(letra):
+    # Definindo as vogais
+    vogais = 'aeiouAEIOU'
+    
+    # Verificando se a letra é uma vogal
+    if letra in vogais:
+        return "A letra é uma vogal."
+    # Verificando se a letra é uma consoante
+    elif letra.isalpha():
+        return "A letra é uma consoante."
+    else:
+        return "Isso não é uma letra."
+
+# Solicitar uma letra do usuário
+letra_usuario = input("Digite uma letra: ")
+
+# Verificar e imprimir o resultado
+resultado = verificar_letra(letra_usuario)
+print(resultado)
+# Função para encontrar o menor preço
+def encontrar_produto_mais_barato(preco1, preco2, preco3):
+    if preco1 < preco2 and preco1 < preco3:
+        return "Você deve comprar o primeiro produto."
+    elif preco2 < preco1 and preco2 < preco3:
+        return "Você deve comprar o segundo produto."
+    else:
+        return "Você deve comprar o terceiro produto."
+
+# Solicitar os preços dos três produtos ao usuário
+preco1 = float(input("Digite o preço do primeiro produto: "))
+preco2 = float(input("Digite o preço do segundo produto: "))
+preco3 = float(input("Digite o preço do terceiro produto: "))
+
+# Determinar e imprimir qual produto comprar
+resultado = encontrar_produto_mais_barato(preco1, preco2, preco3)
+print(resultado)
+# Função para ordenar três números em ordem decrescente
+def ordenar_decrescente(num1, num2, num3):
+    # Coloca os números em uma lista
+    numeros = [num1, num2, num3]
+    # Ordena a lista em ordem decrescente
+    numeros.sort(reverse=True)
+    return numeros
+
+# Solicitar três números ao usuário
+num1 = float(input("Digite o primeiro número: "))
+num2 = float(input("Digite o segundo número: "))
+num3 = float(input("Digite o terceiro número: "))
+
+# Ordenar os números e armazenar o resultado
+numeros_ordenados = ordenar_decrescente(num1, num2, num3)
+
+# Mostrar os números em ordem decrescente
+print("Números em ordem decrescente:", numeros_ordenados)
+# Função para determinar a saudação baseada no turno
+def saudacao_turno(turno):
+    if turno == 'M' or turno == 'm':
+        return "Bom dia!"
+    elif turno == 'V' or turno == 'v':
+        return "Boa tarde!"
+    elif turno == 'N' or turno == 'n':
+        return "Boa noite!"
+    else:
+        return "Valor inválido!"
+
+# Solicitar o turno ao usuário
+turno_usuario = input("Em que turno você estuda? Digite M-matutino, V-vespertino ou N-noturno: ")
+
+# Determinar e imprimir a saudação
+mensagem = saudacao_turno(turno_usuario)
+print(mensagem)
+# Função para retornar o dia da semana correspondente ao número
+def dia_da_semana(numero):
+    if numero == 1:
+        return "Domingo"
+    elif numero == 2:
+        return "Segunda-feira"
+    elif numero == 3:
+        return "Terça-feira"
+    elif numero == 4:
+        return "Quarta-feira"
+    elif numero == 5:
+        return "Quinta-feira"
+    elif numero == 6:
+        return "Sexta-feira"
+    elif numero == 7:
+        return "Sábado"
+    else:
+        return "Valor inválido!"
+
+# Solicitar um número ao usuário
+numero_usuario = int(input("Digite um número (1-7) para ver o dia correspondente da semana: "))
+
+# Determinar e imprimir o dia da semana ou mensagem de valor inválido
+mensagem = dia_da_semana(numero_usuario)
+print(mensagem)
+# Função para calcular a média e atribuir o conceito
+def calcular_conceito(nota1, nota2):
+    # Calcula a média das duas notas
+    media = (nota1 + nota2) / 2
+
+    # Determina o conceito baseado na média
+    if 9.0 <= media <= 10.0:
+        conceito = 'A'
+    elif 7.5 <= media < 9.0:
+        conceito = 'B'
+    elif 6.0 <= media < 7.5:
+        conceito = 'C'
+    elif 4.0 <= media < 6.0:
+        conceito = 'D'
+    elif 0.0 <= media < 4.0:
+        conceito = 'E'
+    else:
+        conceito = 'Valor inválido!'
+    
+    return media, conceito
+
+# Solicitar as duas notas ao usuário
+nota1 = float(input("Digite a primeira nota: "))
+nota2 = float(input("Digite a segunda nota: "))
+
+# Calcular a média e determinar o conceito
+media, conceito = calcular_conceito(nota1, nota2)
+
+# Determinar se o aluno está aprovado ou reprovado
+if conceito in ['A', 'B', 'C']:
+    status = "APROVADO"
+elif conceito in ['D', 'E']:
+    status = "REPROVADO"
+else:
+    status = "Conceito inválido!"
+
+# Mostrar as notas, a média, o conceito e o status
+print(f"Nota 1: {nota1:.2f}")
+print(f"Nota 2: {nota2:.2f}")
+print(f"Média: {media:.2f}")
+print(f"Conceito: {conceito}")
+print(f"Status: {status}")
+# Função para verificar se um ano é bissexto
+def ano_bissexto(ano):
+    # Um ano é bissexto se for divisível por 4
+    # Mas anos múltiplos de 100 não são bissextos, exceto se forem múltiplos de 400
+    if (ano % 4 == 0 and ano % 100 != 0) or (ano % 400 == 0):
+        return True
+    else:
+        return False
+
+# Solicitar o ano ao usuário
+ano = int(input("Digite um ano: "))
+
+# Verificar se o ano é bissexto e imprimir o resultado
+if ano_bissexto(ano):
+    print(f"O ano {ano} é bissexto.")
+else:
+    print(f"O ano {ano} não é bissexto.")
+# Função para verificar se o número é par ou ímpar
+def par_ou_impar(numero):
+    if numero % 2 == 0:
+        return "par"
+    else:
+        return "ímpar"
+
+# Função para verificar se o número é positivo ou negativo
+def positivo_ou_negativo(numero):
+    if numero > 0:
+        return "positivo"
+    elif numero < 0:
+        return "negativo"
+    else:
+        return "zero"  # Caso especial para zero
+
+# Função para verificar se o número é inteiro ou decimal
+def inteiro_ou_decimal(numero):
+    if numero == int(numero):
+        return "inteiro"
+    else:
+        return "decimal"
+
+# Solicitar os dois números ao usuário
+num1 = float(input("Digite o primeiro número: "))
+num2 = float(input("Digite o segundo número: "))
+
+# Solicitar a operação desejada ao usuário
+print("Escolha a operação: ")
+print("1 - Soma")
+print("2 - Subtração")
+print("3 - Multiplicação")
+print("4 - Divisão")
+print("5 - Exponenciação")
+operacao = int(input("Digite o número da operação desejada: "))
+
+# Realizar a operação escolhida
+if operacao == 1:
+    resultado = num1 + num2
+    operacao_str = "soma"
+elif operacao == 2:
+    resultado = num1 - num2
+    operacao_str = "subtração"
+elif operacao == 3:
+    resultado = num1 * num2
+    operacao_str = "multiplicação"
+elif operacao == 4:
+    if num2 != 0:
+        resultado = num1 / num2
+        operacao_str = "divisão"
+    else:
+        resultado = None
+        operacao_str = "divisão"
+        print("Erro: Divisão por zero não é permitida.")
+elif operacao == 5:
+    resultado = num1 ** num2
+    operacao_str = "exponenciação"
+else:
+    resultado = None
+    operacao_str = "operação desconhecida"
+    print("Operação inválida.")
+
+# Verificar as propriedades do resultado e imprimir
+if resultado is not None:
+    paridade = par_ou_impar(resultado)
+    sinal = positivo_ou_negativo(resultado)
+    tipo = inteiro_ou_decimal(resultado)
+    
+    print(f"Resultado da {operacao_str}: {resultado}")
+    print(f"O resultado é {paridade}, {sinal} e {tipo}.")
+# Função para solicitar e validar a idade do usuário
+def solicitar_idade():
+    while True:
+        try:
+            idade = int(input("Digite a sua idade (entre 0 e 150): "))
+            if 0 <= idade <= 150:
+                return idade
+            else:
+                print("Valor inválido! A idade deve estar entre 0 e 150.")
+        except ValueError:
+            print("Valor inválido! Por favor, digite um número inteiro.")
+
+# Solicitar a idade do usuário
+idade = solicitar_idade()
+
+# Exibir a idade informada
+print(f"Sua idade é: {idade} anos.")
+# Lista para armazenar os números
+numeros = []
+
+# Ler 5 números e adicioná-los à lista
+for i in range(5):
+    numero = float(input(f"Digite o {i+1}º número: "))
+    numeros.append(numero)
+
+# Calcular a soma dos números
+soma = sum(numeros)
+
+# Calcular a média dos números
+media = soma / len(numeros)
+
+# Exibir a soma e a média
+print(f"A soma dos números é: {soma}")
+print(f"A média dos números é: {media}")
+# Função para verificar se um número é primo
+def eh_primo(numero):
+    # Números menores ou iguais a 1 não são primos
+    if numero <= 1:
+        return False
+    # Verificar divisibilidade de 2 até a raiz quadrada do número
+    for i in range(2, int(numero**0.5) + 1):
+        if numero % i == 0:
+            return False
+    return True
+
+# Solicitar um número inteiro ao usuário
+numero = int(input("Digite um número inteiro: "))
+
+# Verificar se o número é primo e exibir o resultado
+if eh_primo(numero):
+    print(f"O número {numero} é primo.")
+else:
+    print(f"O número {numero} não é primo.")
+# Lista para armazenar as temperaturas
+temperaturas = []
+
+# Ler 5 temperaturas e adicioná-las à lista
+for i in range(5):
+    temperatura = float(input(f"Digite a {i+1}ª temperatura: "))
+    temperaturas.append(temperatura)
+
+# Calcular a menor e a maior temperatura
+menor_temperatura = min(temperaturas)
+maior_temperatura = max(temperaturas)
+
+# Calcular a média das temperaturas
+media_temperatura = sum(temperaturas) / len(temperaturas)
+
+# Exibir os resultados
+print(f"A menor temperatura informada é: {menor_temperatura:.2f}°C")
+print(f"A maior temperatura informada é: {maior_temperatura:.2f}°C")
+print(f"A média das temperaturas é: {media_temperatura:.2f}°C")
+def calcular_credito(saldo_medio):
+    if saldo_medio <= 200:
+        return 0
+    elif saldo_medio <= 400:
+        return saldo_medio * 0.2
+    elif saldo_medio <= 600:
+        return saldo_medio * 0.3
+    else:
+        return saldo_medio * 0.4
+
+saldo_medio = float(input("Digite o saldo médio do cliente: "))
+credito = calcular_credito(saldo_medio)
+
+print("Saldo médio do cliente:", saldo_medio)
+print("Valor do crédito:", credito)
+def calcular_ano_aposentadoria(idade_atual):
+    ano_atual = 2024  # Ano atual, pode ser substituído pelo ano atual real
+    idade_aposentadoria = 65
+    ano_aposentadoria = ano_atual + (idade_aposentadoria - idade_atual)
+    return ano_aposentadoria
+
+nome = input("Qual é o seu nome? ")
+idade = int(input("Quantos anos você tem? "))
+
+ano_aposentadoria = calcular_ano_aposentadoria(idade)
+print(f"Olá {nome}, você se aposentará em {ano_aposentadoria}.")
+def calcular_salario(valor_hora, horas_trabalhadas):
+    salario_bruto = valor_hora * horas_trabalhadas
+    desconto_sindicato = salario_bruto * 0.03
+    fgts = salario_bruto * 0.11
+    
+    if salario_bruto <= 2112.00:
+        desconto_ir = 0
+    elif salario_bruto <= 2826.65:
+        desconto_ir = salario_bruto * 0.075
+    elif salario_bruto <= 3751.05:
+        desconto_ir = salario_bruto * 0.15
+    elif salario_bruto <= 4664.68:
+        desconto_ir = salario_bruto * 0.225
+    else:
+        desconto_ir = salario_bruto * 0.275
+    
+    salario_liquido = salario_bruto - desconto_sindicato - desconto_ir
+    
+    return salario_bruto, desconto_sindicato, fgts, desconto_ir, salario_liquido
+
+valor_hora = float(input("Digite o valor da hora de trabalho: "))
+horas_trabalhadas = float(input("Digite a quantidade de horas trabalhadas no mês: "))
+
+salario_bruto, desconto_sindicato, fgts, desconto_ir, salario_liquido = calcular_salario(valor_hora, horas_trabalhadas)
+
+print(f"Salário bruto: R${salario_bruto:.2f}")
+print(f"Desconto do sindicato: R${desconto_sindicato:.2f}")
+print(f"FGTS: R${fgts:.2f}")
+print(f"Desconto do Imposto de Renda: R${desconto_ir:.2f}")
+print(f"Salário líquido: R${salario_liquido:.2f}")
